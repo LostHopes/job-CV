@@ -1,0 +1,1 @@
+This is my resume for aquiring future job in tech.
