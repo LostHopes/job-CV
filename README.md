@@ -5,3 +5,4 @@ Packages required to build a pdf (on Arch Linux):
 - texlive-bin
 - texlive-fontsrecommended
 - texlive-latex
+- texlive-latexextra
