@@ -9,7 +9,7 @@ all: build
 	$(CC) $(FLAGS) $(MAIN)
 
 run:
-	$(PDFREADER) "$(PDFDIR)/$(FILENAME).pdf"
+	$(PDFREADER) "$(MAIN)"
 
 build:
 	mkdir -pv pdf
