@@ -1,18 +1,18 @@
 CC=pdflatex
 PDFDIR=pdf
+SRCDIR=src
 PDFREADER=zathura
 FILENAME=resume
 FLAGS=-halt-on-error -output-directory=$(PDFDIR) -jobname=$(FILENAME)
-MAIN=src/resume.tex
 
 all: build
-	$(CC) $(FLAGS) $(MAIN)
+	$(CC) $(FLAGS) ${SRCDIR}/$(FILENAME).tex
 
 run:
-	$(PDFREADER) "$(MAIN)"
+	$(PDFREADER) $(PDFDIR)/$(FILENAME).pdf
 
 build:
-	mkdir -pv pdf
+	mkdir -pv $(PDFDIR)
 
 clean:
 	rm -rv $(PDFDIR)
