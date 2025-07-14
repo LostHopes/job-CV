@@ -1,18 +1,22 @@
 CC=pdflatex
-PDFDIR=pdf
 SRCDIR=src
-PDFREADER=zathura
+PDFDIR=pdf
+PDFREADER=zathura-sandbox
 FILENAME=resume
+PDF=$(PDFDIR)/$(FILENAME).pdf
 FLAGS=-halt-on-error -output-directory=$(PDFDIR) -jobname=$(FILENAME)
 
-all: build
+all: prepare
 	$(CC) $(FLAGS) ${SRCDIR}/$(FILENAME).tex
 
 run:
-	$(PDFREADER) $(PDFDIR)/$(FILENAME).pdf
+	$(PDFREADER) $(PDF)
 
-build:
+prepare:
 	mkdir -pv $(PDFDIR)
 
 clean:
-	rm -rv $(PDFDIR)
+	@rm -rv $(PDFDIR)
+
+
+.PHONY: all run prepare clean
